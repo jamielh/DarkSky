@@ -41,20 +41,22 @@ Role as researcher, designer and tester.
 	- This should take 50 hours. I will be using Pluralsite to learn this. 
 
 - Prototype 
-	- Caleigh will be learning how to use Envision to prototype the app.
-	- This should take 15 hours. This will be done using the Envision website.
+	- Caleigh will be learning how to use Invision to prototype the app.
+	- This should take 15 hours. This will be done using the Invision website.
 
 - Design
 	- Caleigh will be learning more about web design and how to make an app user friendly
 	- This will take 10 hours and will be done using online resources and online courses.
 
-##Jamie Hudson
-
+## {Jamie Hudson}
 I will be one of the web developers on this project. Since the website is the main part of this project, it will be a shared responsibility.
 
--Will complete HTML/CSS trainings to refine skills (w3schools)
+-Web Design
+	-Will complete HTML/CSS trainings to refine skills (w3schools)
 
--Will complete JavaScript training (JavaScript & JQuery by Jon Duckett)
-
--Will practice using invision to make prototypes - this will let us share with the client out vision for the site before developing it next semester
+-JavaScript
+	-Will complete JavaScript training (JavaScript & JQuery by Jon Duckett)
+	
+-Invision
+	-Will practice using invision to make prototypes - this will let us share with the client out vision for the site before developing it next semester
 
