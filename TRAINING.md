@@ -33,3 +33,23 @@ Role as researcher, designer and tester.
   - Learn more about astronomy skills for field test and help for manage data. Few days.
   - Online information and books.
 
+## {Caleigh Joyce}
+
+- App Development
+	- Caleigh will learn Java to be able to program an Android app for the Dark Sky project.
+	- This should take 50 hours. I will be using Pluralsite to learn this. 
+
+- Prototype 
+	- Caleigh will be learning how to use Envision to prototype the app.
+	- This should take 15 hours. This will be done using the Envision website.
+
+- Design
+	- Caleigh will be learning more about web design and how to make an app user friendly
+	- This will take 10 hours and will be done using online resources and online courses.
+
+	
+	
+	
+	
+	
+	
