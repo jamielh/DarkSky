@@ -33,3 +33,10 @@ Role as researcher, designer and tester.
   - Learn more about astronomy skills for field test and help for manage data. Few days.
   - Online information and books.
 
+##Jamie Hudson
+I will be one of the web developers on this project. Since the website is the main part of this project, it will be a shared responsibility.
+
+-Will complete HTML/CSS trainings to refine skills (w3schools)
+-Will complete JavaScript training (JavaScript & JQuery by Jon Duckett)
+-Will practice using invision to make prototypes - this will let us share with the client out vision for the site before developing it next semester
+
