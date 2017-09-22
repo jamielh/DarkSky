@@ -1,23 +1,17 @@
 # Team Training Plan
 Below you will find each of our training plans.
 
-## {Member 1 Name}
-Explain your main role on the project here.
+## {Zixi Pan}
+Role as researcher, designer and tester.
 
-- Training Item 1.
-  - What I will be doing and how long it will take.
-  - Where the training resource is.
+- Search information.
+  - Learn to search information online correctly. 2 hours
+  - Google.
 
-- Training Item 2.
-  - What I will be doing and how long it will take.
-  - Where the training resource is.
+- Web design or app design.
+  - learn to design a good website. Few days.
+  - Online sources like Treehouse for website design and ask professors.
 
-- Training Item N.
-  - What I will be doing and how long it will take.
-  - Where the training resource is.
-
-  
-  
-  
-  
-  zixipan
+- Astronomy knowledge.
+  - Learn more about astronomy skills for field test and help for manage data. Few days.
+  - Online information and books.
