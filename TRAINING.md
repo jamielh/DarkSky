@@ -1,3 +1,6 @@
+# Team Training Plan
+Below you will find each of our training plans.
+
 ## Ben Stueve
 I will be working on the web app and making sure that it can be integrated with the hardware.
 
@@ -33,3 +36,14 @@ Role as researcher, designer and tester.
   - Learn more about astronomy skills for field test and help for manage data. Few days.
   - Online information and books.
 
+
+## Christopher Leonard
+Research, Design, and Database Management
+
+- Microsoft Access
+  - Will take every available training lesson on Microsoft Access from Microsoft.
+  - This should take approximately 3-4 hours.
+
+- Adobe Photoshop/Illustrator
+  - Will learn everything he can about Adobe Photoshop and Illustrator to help with the design process.
+  - Adobe Tutorials.
