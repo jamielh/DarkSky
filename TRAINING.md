@@ -60,3 +60,13 @@ I will be one of the web developers on this project. Since the website is the ma
 -Invision
 	-Will practice using invision to make prototypes - this will let us share with the client out vision for the site before developing it next semester
 
+## Christopher Leonard
+Research, Design, and Database Management
+
+- Microsoft Access
+  - Will take every available training lesson on Microsoft Access from Microsoft.
+  - This should take approximately 3-4 hours.
+
+- Adobe Photoshop/Illustrator
+  - Will learn everything he can about Adobe Photoshop and Illustrator to help with the design process.
+  - Adobe Tutorials.
