@@ -1,23 +1,18 @@
-# Team Training Plan
-Below you will find each of our training plans.
+## Ben Stueve
+I will be working on the web app and making sure that it can be integrated with the hardware.
 
-## {Member 1 Name}
-Explain your main role on the project here.
+- Programming with Arduino
+  - Ben will be working with the arduino pregramming language to make sure that the data that is gathered from the sensors can be easily added to a database and uploaded to the app that we will develop. This should take 5 hours with my background.
+  - This will be done through the arduino website, and tutorials from YouTube. 
 
-- Training Item 1.
-  - What I will be doing and how long it will take.
-  - Where the training resource is.
-
-- Training Item 2.
-  - What I will be doing and how long it will take.
-  - Where the training resource is.
-
-- Training Item N.
-  - What I will be doing and how long it will take.
-  - Where the training resource is.
-
+- Java Programming
+  - Ben will be learning the basics of Java so that it can be used to make an App for the android operating system. This will take around 15 hours.
+  - I will use learnxinyminutes to learn the syntax, and CaveOfProgramming to learn the language.
   
-  
-  
-  
-  zixipan
+- Android Studio
+  - Ben will be learning thow to use android studio to make an app that can used to use the data that the sensors gather. This should take 10 hours.
+  - I will use The android studio site.
+
+- Particle Electron (IoT Device)
+  - I will be learning how devices like the Particle Electron can be used to gather data in the field, and can be connected via cell to the web. I will do this through hands on work and from watching through online tutorials. This should take 10-15 hours.
+  - The training will be done from Particle's web site.
