@@ -1,5 +1,6 @@
 CREATE TABLE active_sensors
 	(
+	sensor_id int,
 	serial varchar(200),
 	latitude decimal(10, 8),
 	longitude decimal(11,8),
@@ -8,11 +9,12 @@ CREATE TABLE active_sensors
 
 CREATE TABLE archived_sensors
 	(
+	sensor_id int,
 	serial varchar(200),
 	latitude decimal(10, 8),
 	longitude decimal(11,8),
 	location varchar(500),
-	primary key(serial));
+	primary key(sensor_id));
 
 CREATE TABLE users
 	(
