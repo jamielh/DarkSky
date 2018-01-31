@@ -18,5 +18,9 @@ CREATE TABLE archived_sensors
 
 CREATE TABLE users
 	(
+	user_id int auto_increment,
 	username varchar(25),
-	password varchar(200));
+	password varchar(200),
+	fname varchar(25),
+	lname varchar(25),
+	primary key(user_id));
