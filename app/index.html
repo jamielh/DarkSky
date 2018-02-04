@@ -27,13 +27,29 @@
           zoom: 12,
           center: hnf
         });
+        var contentString = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Point 1</h1>'+
+            '<div id="bodyContent">'+
+            '<p>This is a test to make sure this works as intended</p>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
         var marker = new google.maps.Marker({
           position: hnf,
           map: map
+          //label: "Test"
         });
         var marker2 = new google.maps.Marker({
           position: hnf2,
           map: map
+        });
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
         });
       }
     </script>
