@@ -30,7 +30,9 @@ function test_input($data) {
 
 if ($password != $conf_password) {
 	$pass_msg = "Passwords do not match."; }
+//store password and confirm to user
  else {
+	$password = password_hash($password, PASSWORD_DEFAULT);
 	$uname = $_SESSION['username'];
 	$query="UPDATE users SET password = '$password' WHERE username='$uname';";
 	if (mysqli_query($con, $query)){

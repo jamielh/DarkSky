@@ -32,14 +32,15 @@ if (!$con)
 //else 
 //	{ echo "Established Database Connection" ;}
 
-$query="SELECT * FROM users WHERE username='$username' and password='$password';";
+$query="SELECT password FROM users WHERE username='$username';";
 $result=mysqli_query($con, $query);
-
-if (mysqli_num_rows($result) == 1) {
+$row=mysqli_fetch_assoc($result);
+$db_password=$row['password'];
+if (password_verify($password, $db_password)) {
 	$_SESSION['username'] = $username;
 	header('Location: admin.php');
 } else {
-	echo "Invalid Login";}
+    print_r ($db_password);}
 mysqli_close($con); 
 ?>
 
