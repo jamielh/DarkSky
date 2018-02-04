@@ -40,7 +40,7 @@ if (password_verify($password, $db_password)) {
 	$_SESSION['username'] = $username;
 	header('Location: admin.php');
 } else {
-    print_r ($db_password);}
+    echo "Invalid Login";}
 mysqli_close($con); 
 ?>
 
