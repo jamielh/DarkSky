@@ -7,11 +7,16 @@
 </head>
 
 <body>
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+	header('location: login.html'); }
+?>
 <!--navigation menu goes at the top of every page on the site-->
 <div id="menu">
 <ul class="menu">
-	<li><a class="active" href="admin.html">Admin Home</a></li>
-	<li><a href="account.html">My Account</a></li>
+	<li><a class="active" href="admin.php">Admin Home</a></li>
+	<li><a href="account.php">My Account</a></li>
 	<li style="float:right"><a href="logout.php">Sign out</a></li>
 </ul>
 </div>

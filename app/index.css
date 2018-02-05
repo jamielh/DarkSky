@@ -74,3 +74,23 @@ p, h4, h3 {
 	text-align: center;
 	}
 	
+.form {
+        width: 300px;
+		padding-top:150px;
+		position: absolute;
+		clear: both;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+}
+
+.form input {
+	width: 100%;
+	clear: both;
+	}
+	
+.error {
+	color: red;
+}
