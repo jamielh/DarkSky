@@ -27,30 +27,43 @@
           zoom: 12,
           center: hnf
         });
-        var contentString = '<div id="content">'+
+        var contentPoint1 = '<div id="content">'+
             '<div id="siteNotice">'+
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Point 1</h1>'+
             '<div id="bodyContent">'+
-            '<p>This is a test to make sure this works as intended</p>'+
+            '<p>If point one needs info it goes here.</p>'+
             '</div>'+
-            '</div>'+
-            'This links to <a href="http://cgi.soic.indiana.edu/~team45/hnf/graphs.html#Point1">Point 1</a>';
+            'This links to the data for <a href="http://cgi.soic.indiana.edu/~team45/hnf/graphs.html#Point1">Point 1</a>'+ '</div>' ;
 
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
+        var infoPoint1 = new google.maps.InfoWindow({
+          content: contentPoint1
+        });
+        var contentPoint2 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Point 1</h1>'+
+            '<div id="bodyContent">'+
+            '<p>If point two needs info it goes here.</p>'+
+            '</div>'+
+            'This links to the data for <a href="http://cgi.soic.indiana.edu/~team45/hnf/graphs.html#Point2">Point 2</a>'+ '</div>' ;
+
+        var infoPoint2 = new google.maps.InfoWindow({
+          content: contentPoint2
         });
         var marker = new google.maps.Marker({
           position: hnf,
           map: map
-          //label: "Test"
         });
         var marker2 = new google.maps.Marker({
           position: hnf2,
           map: map
         });
         marker.addListener('click', function() {
-          infowindow.open(map, marker);
+          infoPoint1.open(map, marker);
+        });
+        marker2.addListener('click', function() {
+          infoPoint2.open(map,marker2);
         });
       }
     </script>
