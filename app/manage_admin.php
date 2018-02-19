@@ -11,10 +11,10 @@
 session_start();
 if(!isset($_SESSION['username'])) {
 	header('location: login.html'); }
-
-if ($_SESSION['username'] != 'rootadmin') {
-	header('location: access_error.html');
-}
+	else {
+	if ($_SESSION['username'] != 'rootadmin') {
+		header('location: access_error.html');
+	}}
 ?>
 <!--navigation menu goes at the top of every page on the site-->
 <div class="menu">
