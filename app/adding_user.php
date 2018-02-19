@@ -25,7 +25,7 @@ $fname = test_input(($_POST['first']));
 $lname = test_input(($_POST['last']));
 $email = test_input(($_POST['email']));
 $username = test_input(($_POST['user']));
-$password = $username . "_test";
+$password = $username . "_temp";
 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
 //scrub data	
@@ -43,7 +43,28 @@ if (mysqli_num_rows($result) > 0) {
 } else {
 	$query="INSERT INTO users (username, password, fname, lname, email) VALUES ('$username', '$hashed_password', '$fname', '$lname', '$email')";
 	if (mysqli_query($con,  $query)) {
-	$msg = "<span style='color: blue'>User added! They will receive an email containing their password shortly.</span><br><a href='add_user.php'>Add another user.</a>" ; }}	
+	$msg = "<span style='color: blue'>User added! They will receive an email containing their password shortly.</span><br><a href='add_user.php'>Add another user.</a>" ; }}
+
+$to = $email;
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers = "Content-type:text/html;charset=UTF-8" . "\r\n";
+$subject = "Your Hoosier National Forest Dark Sky Admin Account";
+$message = "
+<html>
+<head>
+<title>HTML email</title>
+</head>
+<body>
+<p>An admin account for the Hoosier National Forest Dark Sky project has been created for you. </p>
+<p>Your username: $username </p>
+<p>Your password: $password </p>
+<p>Please sign in to <a href='cgi.soic.indiana.edu/~team45/hnf/admin.html'>cgi.soic.indiana.edu/~team45/hnf/admin.html</a> and select My Account > Change Password to secure your account.</p>
+</body>
+</html>
+";
+
+mail($to, $subject, $message, $headers);
+
 ?>
 <!--navigation menu goes at the top of every page on the site-->
 <div class="menu">
