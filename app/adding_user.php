@@ -43,25 +43,25 @@ if (mysqli_num_rows($result) > 0) {
 } else {
 	$query="INSERT INTO users (username, password, fname, lname, email) VALUES ('$username', '$hashed_password', '$fname', '$lname', '$email')";
 	if (mysqli_query($con,  $query)) {
-	$msg = "<span style='color: blue'>User added! They will receive an email containing their password shortly.</span><br><a href='add_user.php'>Add another user.</a>" ; }}
+	$msg = "<span style='color: blue'>User added! They will receive an email containing their password shortly.</span><br><a href='add_user.php'>Add another user.</a>" ;
 
-$to = $email;
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers = "Content-type:text/html;charset=UTF-8" . "\r\n";
-$subject = "Your Hoosier National Forest Dark Sky Admin Account";
-$message = "
-<html>
-<head>
-<title>HTML email</title>
-</head>
-<body>
-<p>An admin account for the Hoosier National Forest Dark Sky project has been created for you. </p>
-<p>Your username: $username </p>
-<p>Your password: $password </p>
-<p>Please sign in to <a href='cgi.soic.indiana.edu/~team45/hnf/admin.html'>cgi.soic.indiana.edu/~team45/hnf/admin.html</a> and select My Account > Change Password to secure your account.</p>
-</body>
-</html>
-";
+	$to = $email;
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers = "Content-type:text/html;charset=UTF-8" . "\r\n";
+	$subject = "Your Hoosier National Forest Dark Sky Admin Account";
+	$message = "
+	<html>
+	<head>
+	<title>HTML email</title>
+	</head>
+	<body>
+	<p>An admin account for the Hoosier National Forest Dark Sky project has been created for you. </p>
+	<p>Your username: $username </p>
+	<p>Your password: $password </p>
+	<p>Please sign in to <a href='cgi.soic.indiana.edu/~team45/hnf/admin.html'>cgi.soic.indiana.edu/~team45/hnf/admin.html</a> and select My Account > Change Password to secure your account.</p>
+	</body>
+	</html>
+	";}}
 
 mail($to, $subject, $message, $headers);
 
