@@ -45,8 +45,8 @@ if ($password != $conf_password) {
 <!--navigation menu goes at the top of every page on the site-->
 <div class="menu">
 <ul class="menu">
-	<li><a class="active" href="admin.php">Admin Home</a></li>
-	<li><a href="account.php">My Account</a></li>
+	<li><a href="admin.php">Admin Home</a></li>
+	<li><a class="active" href="account.php">My Account</a></li>
 	<li style="float:right"><a href="logout.php">Sign out</a></li>
 </ul>
 </div>
