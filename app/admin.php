@@ -11,9 +11,10 @@
 session_start();
 if(!isset($_SESSION['username'])) {
 	header('location: login.html'); }
+$additional_links = '<p style="font-size: 100%"><a class="main" href="manage_admin.php"> Manage Admin Access</a></p>'
 ?>
 <!--navigation menu goes at the top of every page on the site-->
-<div id="menu">
+<div class="menu">
 <ul class="menu">
 	<li><a class="active" href="admin.php">Admin Home</a></li>
 	<li><a href="account.php">My Account</a></li>
@@ -29,7 +30,7 @@ if(!isset($_SESSION['username'])) {
 <br>
 <br>
 <center>
-<div id="admin_options">
+<div class="admin_options">
 <p style="font-size: 100%"><a class="main" href="view.html"> View all sensors</a></p>
 <hr style="height:5px; visibility:hidden;" />
 <p style="font-size: 100%"><a class="main" href="add.html"> Add a sensor</a></p>
@@ -37,6 +38,10 @@ if(!isset($_SESSION['username'])) {
 <p p style="font-size: 100%"><a class="main" href="remove.html"> Remove a sensor</a></p>
 <hr style="height:5px; visibility:hidden;" />
 <p style="font-size: 100%"><a class="main" href="flash.html"> Flash a sensor</a></p>
+<hr style="height:5px; visibility:hidden;" />
+<?php if ($_SESSION['username'] == 'rootadmin') {
+	echo $additional_links;}
+?>
 </div>
 </center>
 

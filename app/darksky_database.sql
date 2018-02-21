@@ -23,4 +23,5 @@ CREATE TABLE users
 	password varchar(200),
 	fname varchar(25),
 	lname varchar(25),
+	email varchar(200),
 	primary key(user_id));
