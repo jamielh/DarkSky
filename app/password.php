@@ -21,11 +21,12 @@ $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_t
 if (!$con)
 	{die("Failed to connect to MySQL: " . mysqli_connect_error()); }
 
+//set variables
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$password = test_input(($_POST['pass']));
 	$conf_password = test_input(($_POST['conf_pass']));
 }
-	
+//scrub data	
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -47,15 +48,23 @@ if ($password != $conf_password) {
 ?>
 
 <!--navigation menu goes at the top of every page on the site-->
-<div id="menu">
+<div class="menu">
 <ul class="menu">
-	<li><a class="active" href="admin.php">Admin Home</a></li>
-	<li><a href="account.php">My Account</a></li>
+	<li><a href="admin.php">Admin Home</a></li>
+	<li><a class="active" href="account.php">My Account</a></li>
 	<li style="float:right"><a href="logout.php">Sign out</a></li>
 </ul>
 </div>
-
+<br>
+<br>
+<br>
+<br>
+<center><h3>Change Password</h3></center>
+<hr style="width:15%">
+<br>
+<br>
 <div class="form">
+<br><br><br><br>
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post">
 <p>New Password: <input type = "password" name="pass" required> </p>
 <p>Confirm New Password: <input type = "password" name="conf_pass" required></p>
