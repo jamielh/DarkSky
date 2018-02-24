@@ -12,6 +12,11 @@
 session_start();
 if(!isset($_SESSION['username'])) {
 	header('location: login.html'); }
+$con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
+
+if (!$con)
+	{die("Failed to connect to MySQL: " . mysqli_connect_error()); }
+
 ?>
 <!--navigation menu goes at the top of every page on the site-->
 <div id="menu">
@@ -33,28 +38,3 @@ if(!isset($_SESSION['username'])) {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
