@@ -31,17 +31,18 @@ if(!isset($_SESSION['username'])) {
 <hr style="width:15%">
 <br><br>
 <div class="table">
+<form action = "removing_user.php" method="POST">
 <?php 
 //make database connection
 $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
 if (!$con)
 	{die("Failed to connect to MySQL: " . mysqli_connect_error()); }
-$query="SELECT user_id, username, fname, lname , email FROM users";
+$query="SELECT user_id, username, fname, lname , email FROM users WHERE username <> 'rootadmin'";
 $result=mysqli_query($con, $query);
 if (mysqli_num_rows($result) > 0) {
-	echo "<table><tr><th>User ID</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th></tr>";
+	echo "<table style='text-align: center'><tr><th>   </th><th>User ID</th><th>Username</th><th>First Name</th><th>Last Name</th><th>Email</th></tr>";
 	while ($row = mysqli_fetch_assoc($result)) {
-		echo "<tr><td>" . $row["user_id"] . "</td><td>" . $row["username"] . "</td><td>" . $row["fname"] . "</td><td>" . $row["lname"] . "</td><td>" . $row["email"]  . "</td></tr>";
+		echo "<tr><td><input type='checkbox' name='user_selection[]' value='" . $row["user_id"] . "'></td><td>" . $row["user_id"] . "</td><td>" . $row["username"] . "</td><td>" . $row["fname"] . "</td><td>" . $row["lname"] . "</td><td>" . $row["email"]  . "</td></tr>";
 		}
 	echo "</table>";
 } else {
@@ -49,7 +50,11 @@ if (mysqli_num_rows($result) > 0) {
 }
 mysqli_close($con);
 ?>
+<br>
+<button type="submit">Remove Selected Users</button>
+</form>
 </div>
+
 
 
 </body>

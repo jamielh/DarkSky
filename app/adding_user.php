@@ -78,4 +78,6 @@ mail($to, $subject, $message, $headers);
 <br>
 <br>
 <center><h3 class="error"><?php echo $msg;?></h3></center>
+</body>
+</html>
 
