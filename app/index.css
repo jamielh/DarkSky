@@ -46,12 +46,12 @@ p, h4, h3 {
 }
 
 #map {
-        height: 600px;
+        height: 575px;
         width: 600px;
 		position: absolute;
 		clear: both;
 		margin: auto;
-		top: 0;
+		top: 48px;
 		bottom: 0;
 		right: 0;
 		left: 0;
@@ -63,7 +63,7 @@ p, h4, h3 {
 		position: absolute;
 		clear: both;
 		margin: auto;
-		top: 0;
+		top: 50px;
 		bottom: 0;
 		right: 0;
 		left: 0;
@@ -93,4 +93,16 @@ p, h4, h3 {
 	
 .error {
 	color: red;
+}
+
+.table {
+	width: 900px;
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	position: relative;
+	clear: both;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
 }

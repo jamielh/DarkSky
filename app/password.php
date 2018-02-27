@@ -8,6 +8,11 @@
 <?php
 //make sure login is valid
 session_start();
+$con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
+
+if (!$con)
+	{die("Failed to connect to MySQL: " . mysqli_connect_error()); }
+
 if(!isset($_SESSION['username'])) {
 	header('location: login.html'); }
 $pass_msg = "";
