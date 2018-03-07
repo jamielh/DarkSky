@@ -31,7 +31,7 @@ $additional_links = '<p style="font-size: 100%"><a class="main" href="manage_adm
 <br>
 <center>
 <div class="admin_options">
-<p style="font-size: 100%"><a class="main" href="view.html"> View all sensors</a></p>
+<p style="font-size: 100%"><a class="main" href="view.php"> View all sensors</a></p>
 <hr style="height:5px; visibility:hidden;" />
 <p style="font-size: 100%"><a class="main" href="add.html"> Add a sensor</a></p>
 <hr style="height:5px; visibility:hidden;" />
