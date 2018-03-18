@@ -23,7 +23,11 @@ if (!$con)
 $msg = "";
 $users_to_remove = ($_POST['user_selection']);
 
-
+foreach ($users_to_remove as $user) {
+	$query = "DELETE FROM users WHERE user_id = '$user';";
+	if (mysqli_query($con,  $query)) {
+	$msg = "<span style='color: blue'>Users removed!</span><br><a href='remove_user.php'>Remove more users.</a>" ;
+}}
 ?>
 <!--navigation menu goes at the top of every page on the site-->
 <div class="menu">
@@ -36,7 +40,7 @@ $users_to_remove = ($_POST['user_selection']);
 <br>
 <br>
 <br>
-<center><h3 class="error"><?php print_r($remove);?></h3></center>
+<center><h3 class="error"><?php echo $msg ;?></h3></center>
 
 
 

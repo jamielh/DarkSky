@@ -58,7 +58,7 @@ if (mysqli_num_rows($result) > 0) {
 	<p>An admin account for the Hoosier National Forest Dark Sky project has been created for you. </p>
 	<p>Your username: $username </p>
 	<p>Your password: $password </p>
-	<p>Please sign in to <a href='cgi.soic.indiana.edu/~team45/hnf/admin.html'>cgi.soic.indiana.edu/~team45/hnf/admin.html</a> and select My Account > Change Password to secure your account.</p>
+	<p>Please sign in to <a href='cgi.soic.indiana.edu/~team45/hnf/admin.php'>cgi.soic.indiana.edu/~team45/hnf/admin.php</a> and select My Account > Change Password to secure your account.</p>
 	</body>
 	</html>
 	";}}
