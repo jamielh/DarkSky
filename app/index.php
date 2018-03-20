@@ -55,7 +55,7 @@
                    '</div>'+
                    '<h1 id=\"firstHeading\" class=\"firstHeading\">Point " . $sensor['sensor_id'] . "</h1>'+
                    '<div id=\"bodyContent\">'+
-                   '<p>If point one needs info it goes here.</p>'+
+                   '<p>If point " . $sensor['sensor_id'] . " needs info it goes here.</p>'+
                    '</div>'+
                    'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/graphs.html#Point" . $sensor['sensor_id'] . ">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
 
