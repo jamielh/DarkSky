@@ -21,11 +21,11 @@
 <div id="map"></div>
     <script>
       function initMap() {
-        var hnf = <?php 
+        var hnf = <?php
             $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
 
             if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
-            
+
             $lat="SELECT latitude FROM sensors WHERE sensor_id ='1';";
             $lon="SELECT longitude FROM sensors WHERE sensor_id ='1';";
             $latResult =mysqli_query($con, $lat);
@@ -41,23 +41,23 @@
             echo "{lat: " . $h . ", lng: " . $v . "}";
 
              ?>;
-        var hnf2 = <?php 
+        var hnf2 = <?php
                     if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
-            
+
                     $lat="SELECT latitude FROM sensors WHERE sensor_id ='2';";
                     $lon="SELECT longitude FROM sensors WHERE sensor_id ='2';";
                     $latResult =mysqli_query($con, $lat);
                     $h = mysqli_fetch_row($latResult);
-        
+
                     $lonResult =mysqli_query($con, $lon);
                     $v =mysqli_fetch_row($lonResult);
-        
-        
+
+
                     $h = (string)$h[0];
                     $v = (string)$v[0];
-        
+
                     echo "{lat: " . $h . ", lng: " . $v . "}";
-        
+
                      ?>;
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
@@ -106,6 +106,10 @@
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkh_IrwjqAOQseqdxghRYrrAIGpeTTt3M&callback=initMap">
 	</script>
+<div>
+	<a class="twitter-timeline" data-width="220" data-height="500" href="https://twitter.com/Hoosiernf?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+</div>
 
+</div>
 </body>
 </html>
