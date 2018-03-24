@@ -21,16 +21,16 @@ $additional_links = '<p style="font-size: 100%"><a class="main" href="manage_adm
 	<li style="float:right"><a href="logout.php">Sign out</a></li>
 </ul>
 </div>
-<h3>Add A Sensor</h3>
+<center><h3>Add A Sensor</h3>
 
 
 
-<form action="NEED TO CHANGE.php" method="post">
+<form action="add_sensor.php" method="post">
 	Sensor ID: <input type="text" name="sid" required><br><br>
 	Serial Number: <input type='number' name='serial' required><br><br>
  	Latitude: <input type="text" name="latitude" required><br><br>
 	Longitude: <input type="text" name="longitude" required><br><br>
-	Location: <input type='text' placeholder='Description of location'required><br><br>
+	Location: <input type='text' name="location" placeholder='Description of location'required><br><br>
 	Active: <select name='active'>
 		<option value='yes'>Yes</option>
 		<option value='no'>No</option>
@@ -40,7 +40,7 @@ $additional_links = '<p style="font-size: 100%"><a class="main" href="manage_adm
 </form>
 
 
-
+</center>
 
 </body>
 </html>
