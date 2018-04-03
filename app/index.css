@@ -46,8 +46,8 @@ p, h4, h3 {
 }
 
 #map {
-        height: 575px;
-        width: 600px;
+        height: 75%;
+        /* width: 600px; */
 		position: absolute;
 		clear: both;
 		margin: auto;
@@ -56,7 +56,7 @@ p, h4, h3 {
 		right: 0;
 		left: 0;
        }
-	   
+
 #weather {
 		height: 600px;
         width: 600px;
@@ -68,12 +68,12 @@ p, h4, h3 {
 		right: 0;
 		left: 0;
        }
-	   
+
 .greeting {
 	padding-top: 150px;
 	text-align: center;
 	}
-	
+
 .form {
         width: 300px;
 		padding-top:150px;
@@ -90,7 +90,7 @@ p, h4, h3 {
 	width: 100%;
 	clear: both;
 	}
-	
+
 .error {
 	color: red;
 }
