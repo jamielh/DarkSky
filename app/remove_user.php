@@ -23,6 +23,7 @@ if(!isset($_SESSION['username'])) {
 	<li><a href="account.php">My Account</a></li>
 	<li style="float:right"><a href="logout.php">Sign out</a></li>
 </ul>
+</div>
 <br>
 <br>
 <br>
@@ -31,6 +32,7 @@ if(!isset($_SESSION['username'])) {
 <hr style="width:15%">
 <br><br>
 <div class="table">
+<center>
 <form action = "removing_user.php" method="POST">
 <?php 
 //make database connection
@@ -53,6 +55,7 @@ mysqli_close($con);
 <br>
 <button type="submit">Remove Selected Users</button>
 </form>
+</center>
 </div>
 
 

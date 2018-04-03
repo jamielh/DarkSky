@@ -11,7 +11,6 @@
 session_start();
 if(!isset($_SESSION['username'])) {
 	header('location: login.html'); }
-$additional_links = '<p style="font-size: 100%"><a class="main" href="manage_admin.php"> Manage Admin Access</a></p>'
 ?>
 <!--navigation menu goes at the top of every page on the site-->
 <div class="menu">
@@ -21,19 +20,24 @@ $additional_links = '<p style="font-size: 100%"><a class="main" href="manage_adm
 	<li style="float:right"><a href="logout.php">Sign out</a></li>
 </ul>
 </div>
-<center><h3>Remove A Sensor</h3>
-
-
-
+<br>
+<br>
+<br>
+<br>
+<center><h3>Remove a sensor</h3></center>
+<hr style="width:15%">
+<br>
+<br>
+<div class="form">
+<br><br><br><br>
 <form action="remove_sensor.php" method="post">
-	Sensor ID: <input type="text" name="sid" required><br><br>
-	Serial Number: <input type='number' name='serial' required><br><br>
- 	<br><br>
-	<input type="submit" value="Remove Sensor"><br>
+	<p>Sensor ID: <input type="text" name="sid" required></p>
+	<p>Serial Number: <input type='number' name='serial' required></p>
+ 	<br>
+	<button type="submit">Remove Sensor</button>
 </form>
+</div>
 
-
-</center>
 
 </body>
 </html>

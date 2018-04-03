@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="index.css" rel="stylesheet" type="text/css">
-<title>Admin Home</title>
+<title>Add Sensor</title>
 </head>
 
 <body>
@@ -11,7 +11,6 @@
 session_start();
 if(!isset($_SESSION['username'])) {
 	header('location: login.html'); }
-$additional_links = '<p style="font-size: 100%"><a class="main" href="manage_admin.php"> Manage Admin Access</a></p>'
 ?>
 <!--navigation menu goes at the top of every page on the site-->
 <div class="menu">
@@ -21,26 +20,30 @@ $additional_links = '<p style="font-size: 100%"><a class="main" href="manage_adm
 	<li style="float:right"><a href="logout.php">Sign out</a></li>
 </ul>
 </div>
-<center><h3>Add A Sensor</h3>
-
-
-
+<br>
+<br>
+<br>
+<br>
+<center><h3>Add a sensor</h3></center>
+<hr style="width:15%">
+<br>
+<br>
+<div class="form">
+<br><br><br><br>
 <form action="add_sensor.php" method="post">
-	Sensor ID: <input type="text" name="sid" required><br><br>
-	Serial Number: <input type='number' name='serial' required><br><br>
- 	Latitude: <input type="text" name="latitude" required><br><br>
-	Longitude: <input type="text" name="longitude" required><br><br>
-	Location: <input type='text' name="location" placeholder='Description of location'required><br><br>
-	Active: <select name='active'>
+	<p>Sensor ID: <input type="text" name="sid" required></p>
+	<p>Serial Number: <input type='number' name='serial' required></p>
+ 	<p>Latitude: <input type="text" name="latitude" required></p>
+	<p>Longitude: <input type="text" name="longitude" required></p>
+	<p>Location: <input type='text' name="location" placeholder='Description of location'required></p>
+	<p>Active: <select name='active'>
 		<option value='yes'>Yes</option>
 		<option value='no'>No</option>
-		</select>
-	<br><br>
-	<input type="submit" value="Add Sensor"><br>
+		</select></p>
+	<br>
+	<button type="submit">Add Sensor</button>
 </form>
-
-
-</center>
+</div>
 
 </body>
 </html>

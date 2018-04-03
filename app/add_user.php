@@ -23,6 +23,7 @@ if(!isset($_SESSION['username'])) {
 	<li><a href="account.php">My Account</a></li>
 	<li style="float:right"><a href="logout.php">Sign out</a></li>
 </ul>
+</div>
 <br>
 <br>
 <br>
