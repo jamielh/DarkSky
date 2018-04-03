@@ -5,7 +5,7 @@ please speak to someone who has access to the rootadmin account.
 	* The rootadmin is the only account that has permission to add and remove admin users.
 	* Once the rootadmin has added you as an admin user, you will receive an email instructing you to change your password. Do this!
 
-##Public Site
+## Public Site
 Information about how to view/download sensor data will go here.
 
 ## Admin Site
