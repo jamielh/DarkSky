@@ -1,11 +1,12 @@
 # Dark Sky
-Specific information about how your application works, how to set it up, and anything else that is pertinent should go here. You should use proper markdown syntax including headings, tables, and lists where appropriate.
 * The public website can be accessed at http://cgi.soic.indiana.edu/~team45/hnf/. No sign in is required for any of the features on this site.
 * The admin website can be accessed at http://cgi.soic.indiana.edu/~team45/hnf/admin.php. Sign in is required. To obtain an account, 
 please speak to someone who has access to the rootadmin account. 
 	* The rootadmin is the only account that has permission to add and remove admin users.
 	* Once the rootadmin has added you as an admin user, you will receive an email instructing you to change your password. Do this!
-	
+
+##Public Site
+Information about how to view/download sensor data will go here.
 
 ## Admin Site
 In the admin site, you can view all of the sensors in the database, add a sensor, and remove a sensor.
