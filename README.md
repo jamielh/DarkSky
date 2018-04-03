@@ -9,10 +9,10 @@ The website can be used by the public to view and download light sensor data. Th
 | AI | Blevis, Shunying , san@indiana.edu |
 
 # Team 45
-- Hudson, Jamie First (Role) email
-- Joyce, Caleigh First (Role) email
-- Stueve, Ben (Role) email
-- Pan, Zixi (Role) email
+- Hudson, Jamie First , hudsonjl@iu.edu
+- Joyce, Caleigh First , caljoyce@iu.edu
+- Stueve, Ben , bstueve@indiana.edu
+- Pan, Zixi , zixipan@indian.edu
 
 # App Information
 [More App Information](app/README.md)
