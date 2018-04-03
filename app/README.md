@@ -7,7 +7,7 @@ please speak to someone who has access to the rootadmin account.
 	*Once the rootadmin has added you as an admin user, you will receive an email instructing you to change your password. Do this!
 	
 
-###Admin Site###
+##Admin Site##
 In the admin site, you can view all of the sensors in the database, add a sensor, and remove a sensor.
 You may change your password by selecting the 'My Account' option from the menu, and then clicking 'Change your password.' Passwords have no requirements, but we recommend creating a strong,  unique password.
 
