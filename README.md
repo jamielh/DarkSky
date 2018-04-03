@@ -12,7 +12,7 @@ The website can be used by the public to view and download light sensor data. Th
 - Hudson, Jamie First , hudsonjl@iu.edu
 - Joyce, Caleigh First , caljoyce@iu.edu
 - Stueve, Ben , bstueve@indiana.edu
-- Pan, Zixi , zixipan@indian.edu
+- Pan, Zixi , zixipan@indiana.edu
 
 # App Information
 [More App Information](app/README.md)
