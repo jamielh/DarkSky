@@ -17,7 +17,7 @@
 </ul>
 </div>
 <!-- still need to make this responsive -->
-<div id="map"></div>
+<div id="map" class="gmap"></div>
     <script>
       function initMap() {
         <?php
