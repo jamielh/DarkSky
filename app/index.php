@@ -57,7 +57,7 @@
                    '<div id=\"bodyContent\">'+
                    '<p>If point " . $sensor['sensor_id'] . " needs info it goes here.</p>'+
                    '</div>'+
-                   'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/graphs.html#Point" . $sensor['sensor_id'] . ">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
+                   'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/graphs.html#Point" . $sensor['sensor_id'] . "\">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
 
                var infoPoint" . $sensor['sensor_id'] . " = new google.maps.InfoWindow({
                  content: contentPoint" . $sensor['sensor_id'] . "
