@@ -25,3 +25,7 @@ CREATE TABLE users
 	lname varchar(25),
 	email varchar(200),
 	primary key(user_id));
+	
+
+	
+	
