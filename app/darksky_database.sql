@@ -25,7 +25,13 @@ CREATE TABLE users
 	lname varchar(25),
 	email varchar(200),
 	primary key(user_id));
-	
+
+CREATE TABLE sensor_data
+	(
+	time_stamp varchar(50),
+	sensor_id varchar(20),
+	readings varchar(1000),
+	primary key (time_stamp));
 
 	
 	
