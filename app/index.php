@@ -56,6 +56,7 @@
                    '<h1 id=\"firstHeading\" class=\"firstHeading\">Point " . $sensor['sensor_id'] . "</h1>'+
                    '<div id=\"bodyContent\">'+
                    '<p>If point " . $sensor['sensor_id'] . " needs info it goes here.</p>'+
+				   '<p> <a href=\"https://www.google.com/maps/dir//38.476100,+-86.540100/@38.4759639,-86.5445502,12z/\">GOOGLE MAPS </a></p>' +
                    '</div>'+
                    'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/jump.html#Point" . $sensor['sensor_id'] . "\">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
 
