@@ -3,7 +3,7 @@ import time
 import binascii
 import json
 import MySQLdb
-import cgi
+
 
 string = "i494f17_team45"
 password = "my+sql=i494f17_team45"
@@ -21,8 +21,8 @@ def on_message(client, userdata, message):
 	timestamp = json_Dict['Timestamp']
 	sensor_id = json_Dict["Sensor ID"]
 	readings =	json_Dict["Hourly Light Samples"]
-	#print(timestamp, sensor_id, readings)
-	#insert into database code goes here!!!
+	#insert data into sensor_data database
+	#currently throwing all readings into one 'readings' column
 	try:
 		sql = 'INSERT INTO sensor_data(time_stamp, sensor_id, readings)'
 		sql+= 'VALUES("' + str(timestamp) + '", "' + str(sensor_id) + '", "' + str(readings) + '");'
@@ -43,5 +43,4 @@ client.loop_start()
 # Subscribe to all light sensor data
 client.subscribe("sensors/light/+")
 time.sleep(60)
-#time.sleep(5)
 client.loop_stop()
