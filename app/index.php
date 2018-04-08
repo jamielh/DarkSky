@@ -17,7 +17,7 @@
 </ul>
 </div>
 <!-- still need to make this responsive -->
-<div id="map"></div>
+<div id="map" class="gmap"></div>
     <script>
       function initMap() {
         <?php
@@ -39,10 +39,17 @@
             echo "var p" . $sensor['sensor_id'] . " = {lat: " . $h . ", lng: " . $v . "};";
           }
           ?>
+		  //Directions INIT
+		  var directionsService = new google.maps.DirectionsService;
+		  var directionsDisplay = new google.maps.DirectionsRenderer;
+
+		  //makes the map
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 9,
             center: p1
           });
+
+		  //This PHP is used to get the locations from the database and displaay them
           <?php
           $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
           if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
@@ -57,7 +64,7 @@
                    '<div id=\"bodyContent\">'+
                    '<p>If point " . $sensor['sensor_id'] . " needs info it goes here.</p>'+
                    '</div>'+
-                   'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/graphs.html#Point" . $sensor['sensor_id'] . ">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
+                   'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/graphs.html#Point" . $sensor['sensor_id'] . "\">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
 
                var infoPoint" . $sensor['sensor_id'] . " = new google.maps.InfoWindow({
                  content: contentPoint" . $sensor['sensor_id'] . "
