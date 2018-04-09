@@ -1,3 +1,22 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="index.css" rel="stylesheet" type="text/css">
+<title>Dark Sky Home</title>
+</head>
+
+<body>
+<!--navigation menu goes at the top of every page on the site-->
+<div class="menu">
+<ul class="menu">
+        <li><a href="index.php">Home</a></li>
+        <li><a class="active" href="graphsAll.php">Graphs and Charts</a></li>
+        <li><a href="weather.html">Weather</a></li>
+        <li><a href="about.html">About</a></li>
+</ul>
+</div>
+<center>
+
 <?php
 $con=mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
 $sql="SELECT data_point, TIME(datetime) FROM data WHERE sensor_id='1' ;";
@@ -50,7 +69,8 @@ echo "]);
                 </head>
                 <body>
                 <div id='curve_chart' style='width: 900px; height: 500px'></div>
-                </body>
+                </center>
+		</body>
                 </html>";
 //echo $part1.$part2.$part3;
 
