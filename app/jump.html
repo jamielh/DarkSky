@@ -1,0 +1,17 @@
+<?php
+<html>
+	<head></head>
+	<body>
+	<form action="graphs.php#Point" method="post" id="myForm">
+	<input name="ID" id="result" type="text">
+	<input type="submit">
+	</form>
+	<script>
+	var hash = location.hash; 
+	document.getElementById("result").value=hash;
+	document.getElementById("myForm").action="graphs.php#Point"+hash;
+	document.getElementById("myForm").submit();
+	</script>
+	</body>
+</html>
+?>
