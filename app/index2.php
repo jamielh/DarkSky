@@ -17,12 +17,9 @@
 </ul>
 </div>
 <!-- still need to make this responsive -->
-<div id="map" class="gmap"></div>
+<div id="map"></div>
     <script>
-	var myLatLng;
-	var latit;
-	var longit;
-      function geoSuccess(position) {
+      function initMap() {
         <?php
         	$con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
         	if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
@@ -42,36 +39,10 @@
             echo "var p" . $sensor['sensor_id'] . " = {lat: " . $h . ", lng: " . $v . "};";
           }
           ?>
-
-		  var latitude = position.coords.latitude;
-		  var longitude = position.coords.longitude;
-
-		  //Directions INIT
-		  var directionsService = new google.maps.DirectionsService;
-		  var directionsDisplay = new google.maps.DirectionsRenderer;
-
-		  myLatLng = {
-			  lat: latitude,
-			  lng: longitude
-		  };
-
-		  //makes the map
           var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 9,
             center: p1
           });
-
-		  directionsDisplay.setMap(map);
-		  var bounds = new google.maps.LatLngBounds();
-
-		  //I want to make my location a marker on the map
-		  var me = new google.maps.Marker({
-			  position: myLatLng,
-			  map: map,
-			  title: 'My location'
-		  });
-
-		  //This PHP is used to get the locations from the database and displaay them
           <?php
           $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
           if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
@@ -85,8 +56,9 @@
                    '<h1 id=\"firstHeading\" class=\"firstHeading\">Point " . $sensor['sensor_id'] . "</h1>'+
                    '<div id=\"bodyContent\">'+
                    '<p>If point " . $sensor['sensor_id'] . " needs info it goes here.</p>'+
+				   '<p> <a href=\"https://www.google.com/maps/dir//' + p" . $sensor['sensor_id'] . ".lat + ',+' + p" . $sensor['sensor_id'] . ".lng + '/@' + p" . $sensor['sensor_id'] . ".lat + ',' + p" . $sensor['sensor_id'] . ".lng + ',12z/\">Click here for directions </a></p>' +
                    '</div>'+
-                   'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/graphs.html#Point" . $sensor['sensor_id'] . "\">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
+                   'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/jump.html#Point" . $sensor['sensor_id'] . "\">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
 
                var infoPoint" . $sensor['sensor_id'] . " = new google.maps.InfoWindow({
                  content: contentPoint" . $sensor['sensor_id'] . "
@@ -99,48 +71,24 @@
 
                marker" . $sensor['sensor_id'] . ".addListener('click', function() {
                  infoPoint" . $sensor['sensor_id'] . ".open(map, marker" . $sensor['sensor_id'] . ");
+               });
 
-//new stuff here oh lord
-
-				 directionsService.route({
-					 // origin: document.getElementById('start').value,
-					 origin: myLatLng,
-
-					 // destination: marker.getPosition(),
-					 destination: p" . $sensor['sensor_id'] . ",
-					 travelMode: 'WALKING'
-				 }, function(response, status) {
-					 if (status === 'OK') {
-						 directionsDisplay.setDirections(response);
-					 } else {
-						 window.alert('Directions request failed due to ' + status);
-					 }
-				 });
-
-//new stuff ends send help
-
-               });";
+			   var myCity = new google.maps.Circle({
+  		   		center:p" . $sensor['sensor_id'] . ",
+  				radius:20000,
+  				strokeColor:'#FF0000',
+  				strokeOpacity:0.8,
+  				strokeWeight:2,
+  				fillColor:'#FF0000',
+  				fillOpacity:0.4
+}); ";
         	}
         	mysqli_close($con);
           ?>
-
       }
-
-	  function geoError() {
-		  alert("Geocoder failed.");
-	  }
-
-	  function getLocation() {
-		  if (navigator.geolocation) {
-			  navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
-			  // alert("Geolocation is supported by this browser.");
-		  } else {
-			  alert("Geolocation is not supported by this browser.");
-		  }
-	  }
     </script>
 	<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkh_IrwjqAOQseqdxghRYrrAIGpeTTt3M&callback=getLocation">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkh_IrwjqAOQseqdxghRYrrAIGpeTTt3M&callback=initMap">
 	</script>
 <div>
 	<a class="twitter-timeline" data-width="220" data-height="500" href="https://twitter.com/Hoosiernf?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
