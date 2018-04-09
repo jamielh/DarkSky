@@ -59,7 +59,7 @@ mysqli_free_result($result);
 echo "]);
 
                 var options = {
-                        title: 'Company Performance',
+                        title: 'Light Pollution',
                         curveType: 'function',
                         legend: { position: 'bottom' }
                         };
