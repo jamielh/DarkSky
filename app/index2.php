@@ -1,7 +1,9 @@
 
 <html>
 <head>
+<!--<meta name="twitter:widgets:autoload" content="off">-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <link href="index.css" rel="stylesheet" type="text/css">
 <title>Dark Sky Home</title>
 </head>
@@ -64,24 +66,24 @@
                  content: contentPoint" . $sensor['sensor_id'] . "
                });
 
+               var marker" . $sensor['sensor_id'] . " = new google.maps.Marker({
+                 position: p" . $sensor['sensor_id'] . ",
+                 map: map
+               });
 
+               marker" . $sensor['sensor_id'] . ".addListener('click', function() {
+                 infoPoint" . $sensor['sensor_id'] . ".open(map, marker" . $sensor['sensor_id'] . ");
+               });
 
-			   var circle" . $sensor['sensor_id'] . " = new google.maps.Circle({
-
+			   var myCity = new google.maps.Circle({
+  		   		center:p" . $sensor['sensor_id'] . ",
+  				radius:20000,
   				strokeColor:'#FF0000',
   				strokeOpacity:0.8,
   				strokeWeight:2,
   				fillColor:'#FF0000',
-  				fillOpacity:0.4,
-				map: map,
-				center:p" . $sensor['sensor_id'] . ",
-				radius:5000,
-				clickable: true
-			});
-
-			circle" . $sensor['sensor_id'] . ".addListener('click', function() {
-			  infoPoint" . $sensor['sensor_id'] . ".open(map, circle" . $sensor['sensor_id'] . ");
-			});";
+  				fillOpacity:0.4
+}); ";
         	}
         	mysqli_close($con);
           ?>
@@ -90,9 +92,9 @@
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkh_IrwjqAOQseqdxghRYrrAIGpeTTt3M&callback=initMap">
 	</script>
-<div>
+<span>
 	<a class="twitter-timeline" data-width="220" data-height="500" href="https://twitter.com/Hoosiernf?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+</span>
 
 </div>
 </body>
