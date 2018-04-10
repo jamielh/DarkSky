@@ -13,7 +13,7 @@
 <div class="menu">
 <ul class="menu">
 	<li><a class="active" href="index.php">Home</a></li>
-	<li><a href="graphs.html">Graphs and Charts</a></li>
+	<li><a href="graphsAll.php">Graphs and Charts</a></li>
 	<li><a href="weather.html">Weather</a></li>
 	<li><a href="about.html">About</a></li>
 </ul>
