@@ -52,12 +52,24 @@
           $result = "SELECT * FROM sensors;";
           $sensors = mysqli_query($con, $result);
           while ($sensor = mysqli_fetch_assoc($sensors)) {
+			$times= "SELECT MAX(time_stamp), readings FROM sensor_data WHERE sensor_id = 'darksky_" . $sensor['sensor_id'] . "';";
+			$sensorInfo = mysqli_query($con, $times);
+			$data = mysqli_fetch_assoc($sensorInfo);
+			$data = $data['readings'];
+			$data = str_replace("[", "", $data);
+			$data = str_replace("]", "", $data);
+			$data = explode(", ", $data);
+			$dataEntry = "<table><tr><th>Hours Ago</th><th>Light Data</th></tr>";
+			for ($x = 0; $x <=5; $x++) {
+				$dataEntry .= "<tr><td>" . ($x+1) . "</td><td>" . substr($data[$x], 0, 6) . "</td></tr>";
+			}
+			$dataEntry .= "</table>";
             echo "var contentPoint" . $sensor['sensor_id'] . " = '<div id=\"content\">'+
                    '<div id=\"siteNotice\">'+
                    '</div>'+
                    '<h1 id=\"firstHeading\" class=\"firstHeading\">Point " . $sensor['sensor_id'] . "</h1>'+
                    '<div id=\"bodyContent\">'+
-                   '<p>If point " . $sensor['sensor_id'] . " needs info it goes here.</p>'+
+                   '<p>" . $dataEntry . "</p>'+
 				   '<p> <a href=\"https://www.google.com/maps/dir//' + p" . $sensor['sensor_id'] . ".lat + ',+' + p" . $sensor['sensor_id'] . ".lng + '/@' + p" . $sensor['sensor_id'] . ".lat + ',' + p" . $sensor['sensor_id'] . ".lng + ',12z/\">Click here for directions </a></p>' +
                    '</div>'+
                    'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/jump.html#Point" . $sensor['sensor_id'] . "\">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;

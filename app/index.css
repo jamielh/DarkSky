@@ -49,6 +49,14 @@ p, h4, h3 {
 	font-family: 'Helvetica', 'Arial', sans-serif;
 }
 
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
 #map {
         height: 80%;
         width: 50%;
