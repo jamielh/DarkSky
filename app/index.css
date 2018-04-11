@@ -71,15 +71,23 @@ table, th, td {
 
 #weather {
 		height: 600px;
-        width: 600px;
 		position: absolute;
 		clear: both;
 		margin: auto;
-		top: 50px;
+		top: 100px;
 		bottom: 0;
 		right: 0;
 		left: 0;
        }
+#btownlight {
+	display: block;
+	position: absolute;
+	margin-left: auto;
+    margin-right: auto;
+	top: 600px;
+
+   }
+}
 /*#tweeter {
 	position: absolute;
 	clear: both;
