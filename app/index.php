@@ -1,4 +1,3 @@
-
 <html>
 <head>
 <!--<meta name="twitter:widgets:autoload" content="off">-->
@@ -18,6 +17,7 @@
 	<li><a href="about.html">About</a></li>
 </ul>
 </div>
+
 <!-- still need to make this responsive -->
 <div id="map"></div>
     <script>
@@ -110,10 +110,15 @@
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkh_IrwjqAOQseqdxghRYrrAIGpeTTt3M&callback=initMap">
 	</script>
+</div>
 <span>
 	<a class="twitter-timeline" data-width="220" data-height="500" href="https://twitter.com/Hoosiernf?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </span>
 
+<div class="download">
+<a href="download.php">Download All Sensor Data</a>
 </div>
+
+
 </body>
 </html>
