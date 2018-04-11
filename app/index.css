@@ -45,9 +45,16 @@ a:link.main {
 	li {float: none;}
 }
 
-p, h4, h3 {
+p, h4, h3, label {
 	font-family: 'Helvetica', 'Arial', sans-serif;
 }
+
+label {
+	display: block;
+	float: left;
+	width: 400px;
+	}
+	
 
 table {
     border-collapse: collapse;
@@ -108,10 +115,17 @@ table, th, td {
 		left: 0;
 }
 
-.form input {
+
+.form input[type="text"],input[type="number"],input[type="select"],input[type="checkbox"] {
 	width: 100%;
 	clear: both;
 	}
+
+.form input[type="radio"] {
+float: right;
+clear: none;
+margin-right: 200px;
+}
 
 .error {
 	color: red;
