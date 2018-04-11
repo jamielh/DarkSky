@@ -49,7 +49,7 @@
           $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
           if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
 
-          $result = "SELECT * FROM sensors;";
+          $result = "SELECT * FROM sensors WHERE active = \"yes\";";
           $sensors = mysqli_query($con, $result);
           while ($sensor = mysqli_fetch_assoc($sensors)) {
 			$times= "SELECT MAX(time_stamp), readings FROM sensor_data WHERE sensor_id = 'darksky_" . $sensor['sensor_id'] . "';";
@@ -81,7 +81,7 @@
             echo "var contentPoint" . $sensor['sensor_id'] . " = '<div id=\"content\">'+
                    '<div id=\"siteNotice\">'+
                    '</div>'+
-                   '<h1 id=\"firstHeading\" class=\"firstHeading\">Point " . $sensor['sensor_id'] . "</h1>'+
+                   '<h1 id=\"firstHeading\" class=\"firstHeading\">darksky_" . $sensor['sensor_id'] . "</h1>'+
                    '<div id=\"bodyContent\">'+
                    '<p>" . $dataEntry . "</p>'+
 				   '<p>" . $nightData . "</p>'+
