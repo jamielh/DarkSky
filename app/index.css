@@ -78,6 +78,7 @@ table, th, td {
 
 #weather {
 		height: 600px;
+        width: 70%;
 		position: absolute;
 		clear: both;
 		margin: auto;

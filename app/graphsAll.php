@@ -68,7 +68,7 @@ echo "		</script>
                 <body>";
                 for ($i=1; $i<=$limit;$i++)
                 {echo "<h2>Sensor".$i."</h2>";
-		echo "<div id='curve_chart".$i."' style='width: 900px; height: 500px'> <h2>sensor".$i."</h2></div>";}
+		echo "<div id='curve_chart".$i."' style='width: 100%; height: 500px'> <h2>sensor".$i."</h2></div>";}
 echo         "</center></body>
                 </html>";
 //echo $part1.$part2.$part3;
