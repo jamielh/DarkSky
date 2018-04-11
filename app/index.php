@@ -59,6 +59,16 @@
 			$data = str_replace("[", "", $data);
 			$data = str_replace("]", "", $data);
 			$data = explode(", ", $data);
+			$dataAvg = round(array_sum($data)/count($data));
+			$color = "red";
+			if ($dataAvg >= 4) {
+				 $color = "green";
+			} elseif ($dataAvg >= 8) {
+				$color = "yellow";
+			} elseif ($dataAvg >=12) {
+				$color = "orange";
+			}
+			$dataAvg = (string)$dataAvg;
 			$dataEntry = "<table><tr><th>Hours Ago</th><th>Light Data</th></tr>";
 			for ($x = 0; $x <=5; $x++) {
 				$dataEntry .= "<tr><td>" . ($x+1) . "</td><td>" . substr($data[$x], 0, 6) . "</td></tr>";
@@ -80,7 +90,8 @@
 
                var marker" . $sensor['sensor_id'] . " = new google.maps.Marker({
                  position: p" . $sensor['sensor_id'] . ",
-                 map: map
+                 map: map,
+				 icon: 'img/" . $color . $dataAvg . ".png'
                });
 
                marker" . $sensor['sensor_id'] . ".addListener('click', function() {
