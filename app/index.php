@@ -58,17 +58,21 @@
 			$data = $data['readings'];
 			$data = str_replace("[", "", $data);
 			$data = str_replace("]", "", $data);
-			$data = explode(", ", $data);
-			$dataAvg = round(array_sum($data)/count($data));
+			$data = explode(", ", $data)
+			$nightData = substr($data, 6,15);
+			$dataAvg = round(array_sum($nightData)/count($nightData));
 			$color = "red";
-			if ($dataAvg >= 4) {
+			if ($dataAvg >= 3) {
 				 $color = "green";
-			} elseif ($dataAvg >= 8) {
+			} elseif ($dataAvg >= 6) {
 				$color = "yellow";
-			} elseif ($dataAvg >=12) {
+			} elseif ($dataAvg >=9) {
 				$color = "orange";
 			}
-			$dataAvg = (string)$dataAvg;
+			if ($dataAvg <= 15){
+				$color = $color . (string)$dataAvg;
+			}
+
 			$dataEntry = "<table><tr><th>Hours Ago</th><th>Light Data</th></tr>";
 			for ($x = 0; $x <=5; $x++) {
 				$dataEntry .= "<tr><td>" . ($x+1) . "</td><td>" . substr($data[$x], 0, 6) . "</td></tr>";
@@ -91,22 +95,12 @@
                var marker" . $sensor['sensor_id'] . " = new google.maps.Marker({
                  position: p" . $sensor['sensor_id'] . ",
                  map: map,
-				 icon: 'img/" . $color . $dataAvg . ".png'
+				 icon: 'img/" . $color . ".png'
                });
 
                marker" . $sensor['sensor_id'] . ".addListener('click', function() {
                  infoPoint" . $sensor['sensor_id'] . ".open(map, marker" . $sensor['sensor_id'] . ");
-               });
-
-			   var myCity = new google.maps.Circle({
-  		   		center:p" . $sensor['sensor_id'] . ",
-  				radius:20000,
-  				strokeColor:'#FF0000',
-  				strokeOpacity:0.8,
-  				strokeWeight:2,
-  				fillColor:'#FF0000',
-  				fillOpacity:0.4
-}); ";
+               });";
         	}
         	mysqli_close($con);
           ?>
