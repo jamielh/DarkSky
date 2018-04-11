@@ -58,15 +58,15 @@
 			$data = $data['readings'];
 			$data = str_replace("[", "", $data);
 			$data = str_replace("]", "", $data);
-			$data = explode(", ", $data)
-			$nightData = substr($data, 6,15);
+			$data = explode(", ", $data);
+			$nightData = array_slice($data, 6,15);
 			$dataAvg = round(array_sum($nightData)/count($nightData));
 			$color = "red";
-			if ($dataAvg >= 3) {
+			if ($dataAvg <= 3) {
 				 $color = "green";
-			} elseif ($dataAvg >= 6) {
+			} elseif ($dataAvg <= 6) {
 				$color = "yellow";
-			} elseif ($dataAvg >=9) {
+			} elseif ($dataAvg <=9) {
 				$color = "orange";
 			}
 			if ($dataAvg <= 15){
@@ -84,6 +84,7 @@
                    '<h1 id=\"firstHeading\" class=\"firstHeading\">Point " . $sensor['sensor_id'] . "</h1>'+
                    '<div id=\"bodyContent\">'+
                    '<p>" . $dataEntry . "</p>'+
+				   '<p>" . $nightData . "</p>'+
 				   '<p> <a href=\"https://www.google.com/maps/dir//' + p" . $sensor['sensor_id'] . ".lat + ',+' + p" . $sensor['sensor_id'] . ".lng + '/@' + p" . $sensor['sensor_id'] . ".lat + ',' + p" . $sensor['sensor_id'] . ".lng + ',12z/\">Click here for directions to this sensor</a></p>' +
                    '</div>'+
                    'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/jump.html#Point" . $sensor['sensor_id'] . "\">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
