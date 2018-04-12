@@ -2,7 +2,6 @@
 <head>
 <!--<meta name="twitter:widgets:autoload" content="off">-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <link href="index.css" rel="stylesheet" type="text/css">
 <title>Dark Sky Home</title>
 </head>
@@ -52,7 +51,7 @@
           $result = "SELECT * FROM sensors WHERE active = \"yes\";";
           $sensors = mysqli_query($con, $result);
           while ($sensor = mysqli_fetch_assoc($sensors)) {
-			$times= "SELECT * FROM sensor_data WHERE sensor_id = 'darksky_" . $sensor['sensor_id'] . "' ORDER BY time_stamp DESC LIMIT 1;";
+			$times= "SELECT MAX(time_stamp), readings FROM sensor_data WHERE sensor_id = 'darksky_" . $sensor['sensor_id'] . "';";
 			$sensorInfo = mysqli_query($con, $times);
 			$data = mysqli_fetch_assoc($sensorInfo);
 			$data = $data['readings'];
@@ -109,13 +108,16 @@
     </script>
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkh_IrwjqAOQseqdxghRYrrAIGpeTTt3M&callback=initMap">
+
 	</script>
+	
 </div>
 <span>
-	<a class="twitter-timeline" data-width="220" data-height="500" href="https://twitter.com/Hoosiernf?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<a class="twitter-timeline" data-width="25%" data-height="90%" href="https://twitter.com/Hoosiernf?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </span>
-
-<div class="download">
+<div id ='explain'>
+<p><h3>Hello!</h3></p>
+<p>This map shows sensor locations in Hoosier National Forest. These sensors detect light pollution for the Hoosier National Forest to track and record.</p>
 <a href="download.php">Download All Sensor Data</a>
 </div>
 
