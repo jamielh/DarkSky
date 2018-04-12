@@ -119,6 +119,5 @@
 <a href="download.php">Download All Sensor Data</a>
 </div>
 
-
 </body>
 </html>
