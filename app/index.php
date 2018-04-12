@@ -52,7 +52,7 @@
           $result = "SELECT * FROM sensors WHERE active = \"yes\";";
           $sensors = mysqli_query($con, $result);
           while ($sensor = mysqli_fetch_assoc($sensors)) {
-			$times= "SELECT MAX(time_stamp), readings FROM sensor_data WHERE sensor_id = 'darksky_" . $sensor['sensor_id'] . "';";
+			$times= "SELECT * FROM sensor_data WHERE sensor_id = 'darksky_" . $sensor['sensor_id'] . "' ORDER BY time_stamp DESC LIMIT 1;";
 			$sensorInfo = mysqli_query($con, $times);
 			$data = mysqli_fetch_assoc($sensorInfo);
 			$data = $data['readings'];
