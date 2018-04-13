@@ -153,6 +153,15 @@
         	}
         	mysqli_close($con);
           ?>
+
+		  
+		  <?php
+		  $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
+		  if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
+
+		  $result = "SELECT * FROM sensors WHERE active = \"yes\";";
+		  $sensors = mysqli_query($con, $result);
+		  ?>
       }
 
     </script>
