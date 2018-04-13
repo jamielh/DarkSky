@@ -88,26 +88,6 @@
 				$color = $color . (string)$dataAvg;
 			}
 
-			$weekSQL= "SELECT * FROM sensor_data WHERE sensor_id = 'darksky_" . $sensor['sensor_id'] . "' ORDER BY time_stamp DESC LIMIT 7;";
-			$sensorInfo = mysqli_query($con, $weekSQL);
-			$weekData = [];
-			while ($row = $sensorInfo->fetch_assoc()) {
-				$row = $row['readings'];
-				$row = str_replace("[", "", $row);
-				$row = str_replace("]", "", $row);
-				$row = explode(", ", $row);
-				$rowNight = array_slice($row, 6,15);
-				$weekData = array_merge($weekData, $rowNight);
-			}
-			$weekAvg = round(array_sum($weekData)/count($weekData));
-			$weekColor = "#FF0000";
-			if ($weekAvg <= 3) {
-				 $weekColor = "#00FF00";
-			} elseif ($weekAvg <= 6) {
-				$weekColor = "#FFFF00";
-			} elseif ($weekAvg <=9) {
-				$weekColor = "#FFA500";
-			}
 			$dataEntry = "<table><tr><th>Hours Ago</th><th>Light Data</th></tr>";
 			for ($x = 0; $x <=5; $x++) {
 				$dataEntry .= "<tr><td>" . ($x+1) . "</td><td>" . substr($data[$x], 0, 6) . "</td></tr>";
@@ -137,30 +117,51 @@
 
                marker" . $sensor['sensor_id'] . ".addListener('click', function() {
                  infoPoint" . $sensor['sensor_id'] . ".open(map, marker" . $sensor['sensor_id'] . ");
-               });
-
-
-			   var circle" . $sensor['sensor_id'] . " = new google.maps.Circle({
-	 		   	strokeColor: '" . $weekColor . "',
-	 			strokeOpacity: 0.6,
-	 			strokeWeight: 1,
-	 			fillColor: '" . $weekColor . "',
-	 			fillOpacity: 0.25,
-	 			map: map,
-	 			center: p" . $sensor['sensor_id'] . ",
-	 			radius: 5000
- 			  });";
+               });";
         	}
         	mysqli_close($con);
           ?>
 
-		  
+
 		  <?php
 		  $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
 		  if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
 
 		  $result = "SELECT * FROM sensors WHERE active = \"yes\";";
 		  $sensors = mysqli_query($con, $result);
+
+		  while ($sensor = mysqli_fetch_assoc($sensors)) {
+			  $weekSQL= "SELECT * FROM sensor_data WHERE sensor_id = 'darksky_" . $sensor['sensor_id'] . "' ORDER BY time_stamp DESC LIMIT 7;";
+  			  $sensorInfo = mysqli_query($con, $weekSQL);
+  			  $weekData = [];
+  			  while ($row = $sensorInfo->fetch_assoc()) {
+  				$row = $row['readings'];
+  				$row = str_replace("[", "", $row);
+  				$row = str_replace("]", "", $row);
+  				$row = explode(", ", $row);
+  				$rowNight = array_slice($row, 6,15);
+  				$weekData = array_merge($weekData, $rowNight);
+  			  }
+  			  $weekAvg = round(array_sum($weekData)/count($weekData));
+  			  $weekColor = "#FF0000";
+  			  if ($weekAvg <= 3) {
+  				  $weekColor = "#00FF00";
+  			  } elseif ($weekAvg <= 6) {
+  				  $weekColor = "#FFFF00";
+  			  } elseif ($weekAvg <=9) {
+  				  $weekColor = "#FFA500";
+  			}
+
+			echo "var circle" . $sensor['sensor_id'] . " = new google.maps.Circle({
+				 	strokeColor: '" . $weekColor . "',
+				 	strokeOpacity: 0.6,
+				 	strokeWeight: 1,
+				 	fillColor: '" . $weekColor . "',
+				 	fillOpacity: 0.25,
+				 	map: map,
+				 	center: p" . $sensor['sensor_id'] . ",
+				 	radius: 5000
+			 	});";
 		  ?>
       }
 
