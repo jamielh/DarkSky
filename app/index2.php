@@ -8,6 +8,12 @@
 </head>
 
 <body>
+<!--	<div id="floating-panel">
+	      <input type="submit" name = "hideIcons" value="hide">
+	      <input type="submit" name = "showIcons" value="show">
+	</div>
+-->
+
 <!--navigation menu goes at the top of every page on the site-->
 <div class="menu">
 <ul class="menu">
@@ -51,6 +57,15 @@
 
           $result = "SELECT * FROM sensors WHERE active = \"yes\";";
           $sensors = mysqli_query($con, $result);
+
+		  if ($_SERVER['REQUEST POSTED'] = 'POST') {
+			  if (isset($_POST['hideIcons'])) {
+		          $sensors = NULL;
+		      } else if (isset($_POST['showIcons'])){
+		          $sensors = $sensors;
+		      }
+		  }
+
           while ($sensor = mysqli_fetch_assoc($sensors)) {
 			$times= "SELECT * FROM sensor_data WHERE sensor_id = 'darksky_" . $sensor['sensor_id'] . "' ORDER BY time_stamp DESC LIMIT 1;";
 			$sensorInfo = mysqli_query($con, $times);
@@ -109,6 +124,7 @@
                    '</div>'+
                    'This links to the data for <a href=\"http://cgi.soic.indiana.edu/~team45/hnf/jump.html#Point" . $sensor['sensor_id'] . "\">Point " . $sensor['sensor_id'] . "</a>'+ '</div>' ;
 
+
                var infoPoint" . $sensor['sensor_id'] . " = new google.maps.InfoWindow({
                  content: contentPoint" . $sensor['sensor_id'] . "
                });
@@ -138,6 +154,7 @@
         	mysqli_close($con);
           ?>
       }
+
     </script>
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkh_IrwjqAOQseqdxghRYrrAIGpeTTt3M&callback=initMap">
