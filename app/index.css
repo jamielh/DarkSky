@@ -132,11 +132,12 @@ table, th, td {
 }
 
 
-.form input[type="text"],input[type="number"],input[type="select"],input[type="checkbox"] {
+.form input[type="text"],input[type="number"],input[type="select"],input[type="checkbox"], input[type="password"] {
 	width: 100%;
 	clear: both;
 	}
 
+	
 .form input[type="radio"] {
 float: right;
 clear: none;
