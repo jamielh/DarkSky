@@ -8,11 +8,11 @@
 </head>
 
 <body>
-<!--	<div id="floating-panel">
-	      <input type="submit" name = "hideIcons" value="hide">
-	      <input type="submit" name = "showIcons" value="show">
+	<div id="floating-panel">
+	      <input onclick="hideCircles();" type="button" value="Hide Circles">
+	      <input onclick="showCircles();" type="button" value="Show Circles">
 	</div>
--->
+
 
 <!--navigation menu goes at the top of every page on the site-->
 <div class="menu">
@@ -28,11 +28,12 @@
 <div id="map"></div>
     <script>
       function initMap() {
+		 // var points = [];
         <?php
         	$con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
         	if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
 
-        	$result = "SELECT * FROM sensors;";
+        	$result = "SELECT * FROM sensors WHERE active = \"yes\";";
         	$sensors = mysqli_query($con, $result);
         	//echo var_dump($sensors);
         	while ($sensor = mysqli_fetch_assoc($sensors)) {
@@ -122,7 +123,7 @@
         	mysqli_close($con);
           ?>
 
-
+// This adds the circles to the map
 		  <?php
 		  $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
 		  if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
@@ -162,9 +163,25 @@
 				 	center: p" . $sensor['sensor_id'] . ",
 				 	radius: 5000
 			 	});";
+			}
 		  ?>
-      }
 
+		  //This makes the markers invisible
+
+      }
+	  function hideCircles() {
+	  <?php
+	  $con = mysqli_connect("db.soic.indiana.edu", "i494f17_team45", "my+sql=i494f17_team45", "i494f17_team45");
+	  if (!$con){die("Failed to connect to MySQL: " . mysqli_connect_error()); }
+
+	  $result = "SELECT * FROM sensors WHERE active = \"yes\";";
+	  $sensors = mysqli_query($con, $result);
+
+	  while ($sensor = mysqli_fetch_assoc($sensors)) {
+		  echo "circle" . $sensor['sensor_id'] . ".setVisible(false);";
+	  }
+	  ?>
+  }
     </script>
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkh_IrwjqAOQseqdxghRYrrAIGpeTTt3M&callback=initMap">
