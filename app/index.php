@@ -18,7 +18,10 @@
 </div>
 
 <!-- still need to make this responsive -->
-<div id="map"></div>
+
+<div class = "items">
+
+<div id="map" class="gmap"></div>
     <script>
       function initMap() {
         <?php
@@ -143,13 +146,14 @@
 	</script>
 
 </div>
-<span>
+<span class="twit">
 	<a class="twitter-timeline" data-width="25%" data-height="90%" href="https://twitter.com/Hoosiernf?ref_src=twsrc%5Etfw">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </span>
 <div id ='explain'>
 <p><h3>Hello!</h3></p>
 <p>This map shows sensor locations in Hoosier National Forest. These sensors detect light pollution for the Hoosier National Forest to track and record.</p>
 <a href="download.php">Download All Sensor Data</a>
+</div>
 </div>
 
 </body>
