@@ -61,7 +61,8 @@
 			$data = str_replace("[", "", $data);
 			$data = str_replace("]", "", $data);
 			$data = explode(", ", $data);
-			$nightData = array_slice($data, 6,15);
+			$blank = [];
+			$nightData = array_merge($blank, array_slice($data, 6,15));
 			$dataAvg = round(array_sum($nightData)/count($nightData));
 			$color = "red";
 			if ($dataAvg <= 3) {
@@ -96,9 +97,9 @@
 				$weekColor = "#FFA500";
 			}
 
-			$dataEntry = "<table><tr><th>Hours Ago</th><th>Light Data</th></tr>";
-			for ($x = 0; $x <=5; $x++) {
-				$dataEntry .= "<tr><td>" . ($x+1) . "</td><td>" . substr($data[$x], 0, 6) . "</td></tr>";
+			$dataEntry = "<table><tr><th>Time of Day</th><th>Light Data</th></tr>";
+			for ($x = 6; $x <=15; $x++) {
+				$dataEntry .= "<tr><td>" . ($x+3) . ":00</td><td>" . substr($data[$x], 0, 6) . "</td></tr>";
 			}
 			$dataEntry .= "</table>";
             echo "var contentPoint" . $sensor['sensor_id'] . " = '<div id=\"content\">'+

@@ -63,6 +63,17 @@ a:link.main {
 		height: 80% !important;
 		margin: auto !important;
 	}
+		#weather {
+		        width: 100% !important;
+				position: absolute;
+				clear: both;
+				margin: auto;
+				top: 100px;
+				bottom: 0;
+				right: 0;
+				left: 0;
+		       }
+
 }
 
 p, h4, h3, label {
