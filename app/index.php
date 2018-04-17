@@ -98,8 +98,11 @@
 			}
 
 			$dataEntry = "<table><tr><th>Time of Day</th><th>Light Data</th></tr>";
+			$y = 21;
 			for ($x = 6; $x <=15; $x++) {
-				$dataEntry .= "<tr><td>" . ($x+3) . ":00</td><td>" . substr($data[$x], 0, 6) . "</td></tr>";
+				$dataEntry .= "<tr><td>" . ($y) . ":00</td><td>" . substr($data[$x], 0, 6) . "</td></tr>";
+				$y++;
+				if ($y > 23) $y = 0;
 			}
 			$dataEntry .= "</table>";
             echo "var contentPoint" . $sensor['sensor_id'] . " = '<div id=\"content\">'+
