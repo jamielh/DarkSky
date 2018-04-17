@@ -155,7 +155,7 @@
 </span>
 <div id ='explain'>
 <p><h3>Hello!</h3></p>
-<p>This map shows sensor locations in Hoosier National Forest. These sensors detect light pollution for the Hoosier National Forest to track and record.</p>
+<p>This map shows sensor locations in Hoosier National Forest. These sensors detect light pollution for the Hoosier National Forest to track and record. The markers on the map indicate that a light sensor is in that location. You can click on a sensor to see more information. The number within the marker indicates the maximum light reading for the previous day. The colored circle surrounding each marker is a color from green to red, indicating how bad the light pollution average was over the last week. Please check out Hoosier National Forest's twitter for up-to-date information and events! Click the link below to download all the sensor data to do your own analysis.</p>
 <a href="download.php">Download All Sensor Data</a>
 </div>
 </div>
