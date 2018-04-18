@@ -23,7 +23,7 @@ $limit = 0;
 while($row=$result->fetch_assoc())
 	{$limit +=1;}
 echo "<h2>All Sensors</h2>";
-echo $limit." sensors detected<br>";
+// echo $limit." sensors detected<br>";
 if (!$con)
 	{die("Failed to connect to MySQL: " . mysqli_connect_error()); }
 
@@ -37,7 +37,7 @@ echo "<!doctype html>
 for ($i=0; $i<$limit;$i++)
         {
 //	$sql="SELECT * FROM sensor_data WHERE sensor_id = 'darksky_" . $i . "' ORDER BY time_stamp DESC LIMIT 1;";
-	$sql="SELECT time_stamp, sensor_id, readings FROM sensor_data WHERE sensor_id='darksky_".$i."' ORDER BY time_stamp DESC LIMIT 1;"; 
+	$sql="SELECT time_stamp, sensor_id, readings FROM sensor_data WHERE sensor_id='darksky_".$i."' ORDER BY time_stamp DESC LIMIT 1;";
        $result = $con->query($sql);
 		$data="";
 		while($row=$result->fetch_assoc())
@@ -72,7 +72,7 @@ echo "		</script>
                 </head>
                 <body>";
                 for ($i=0; $i<$limit;$i++)
-                {echo "<h2>Sensor".$i."</h2>";
+                {echo "<h2>Sensor ".$i."</h2>";
 		echo "<div id='curve_chart".$i."' style='width: 100%; height: 500px'> <h2>sensor".$i."</h2></div>";}
 echo         "</center></body>
                 </html>";
