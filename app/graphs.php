@@ -155,9 +155,9 @@ echo "]);
 echo "
                 </script>
                 </head>
-                <body>    <h3>Daily</h3> <div id='curve_chart' style='width: 1200px; height: 500px'></div><br><br>
-                <h3>Weekly</h3><div id='curve_chartW' style='width: 1200px; height: 500px'></div><br><br>
-		<h3>Monthly</h3><div id='curve_chartM' style='width: 1200px; height: 500px'></div>
+                <body>    <h3>Daily</h3> <div id='curve_chart' style='width: 100%; height: 500px'></div><br><br>
+                <h3>Weekly</h3><div id='curve_chartW' style='width: 100%; height: 500px'></div><br><br>
+		<h3>Monthly</h3><div id='curve_chartM' style='width: 100%; height: 500px'></div>
 		</center>";
 echo "		</body>
                 </html>";
