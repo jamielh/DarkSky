@@ -12,5 +12,3 @@ Information about how to view/download sensor data will go here.
 In the admin site, you can view all of the sensors in the database, add a sensor, and remove a sensor.
 You may change your password by selecting the 'My Account' option from the menu, and then clicking 'Change your password.' Passwords have no requirements, but we recommend creating a strong,  unique password.
 
-
-For a guide on how to build this README.md, take a look at some popular public GitHub projects. Someone already did some heavy lifting [here](https://github.com/matiassingers/awesome-readme).
